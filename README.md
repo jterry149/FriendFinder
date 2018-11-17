@@ -8,7 +8,7 @@
 
 ## Demo
 	
-*Friend Finder* is deployed to Heroku. Please check it out [here]().
+*Friend Finder* is deployed to Heroku. Please check it out [here](https://disfriendfinder.herokuapp.com/).
 
 ## Installation
 
