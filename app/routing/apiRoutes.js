@@ -1,8 +1,5 @@
-// Pull in required dependencies
-var path = require('path');
-
 // Import the list of friend entries
-var friends = require('../data/friends.js');
+var friends = require('../data/friends');
 
 // Export API routes
 module.exports = function(app) 
@@ -53,7 +50,7 @@ module.exports = function(app)
 			}
 		}
 
-		// Add new userInput to friends array
+		// Add new input to friends array
 		friends.push(userInput);
 
 		// Send appropriate response to user if a match is found

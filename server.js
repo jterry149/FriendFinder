@@ -6,8 +6,10 @@ var path = require('path');
 var app = express();
 var PORT = process.env.PORT || 8080;
 
-// Have the public directory to access CSS files
-app.use(express.static(path.join(__dirname, './app/public')));
+// Sets up public directory and accesses the data
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.static(path.join(__dirname, '/app/public')));
 
 // Add the application routes 
 require(path.join(__dirname, './app/routing/apiRoutes'))(app);
