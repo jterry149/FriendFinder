@@ -2,20 +2,18 @@ body
 {
     width: 75%;
     margin: 0px auto; 
-
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    background-image: url(https://wallpapercave.com/wp/tfUMfjr.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 header 
 {
     height: 100px;
-}
-
-header > nav 
-{
-    height: 100%;
 }
 
 main 
@@ -28,32 +26,39 @@ main h1
     font-weight: bold;
 }
 
- main h2 
- {
+main h2 
+{
     font-weight: 300;
 }
 
-#logo-icon 
+/*===== Bottom Link Styling =====*/
+.links 
 {
-   margin-left: 50px;
-   margin-top: 20px;
+    color:#ffffff;
+    font-size: 20px;
+    text-shadow:  2px 2px #337ab7;
+    
 }
 
-#logo 
+.links:hover 
 {
-    margin-left: 50px;
-    margin-top: 20px;
+    color: #337ab7;
+    font-size: 20px;
+    text-shadow:  2px 2px #ffffff;
 }
 
-#head-nav-links 
+.jumbotron
 {
-    margin-right: 50px;
-    margin-top: 20px;
+    margin-top:50px;
 }
-
 .mainpanel
 {
    margin: 50px;
+}
+
+.questionBox 
+{
+    background: #ffffff;
 }
 
 #mainpanel-content 
