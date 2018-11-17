@@ -19,11 +19,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
 
+<!--============ stylesheet ================-->
+  <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
 
-<div class="container-fluid">
+<div class="container-fluid mainpanel-content">
 
     <h2>Survey Questions</h2>
     <br>
@@ -173,24 +176,17 @@
 </div>
 
 <!--======== Results Section Modal ===============-->
-<div id="results-modal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-
-      <!--==== Modal content ====-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h2 class="modal-title"><strong>Best Match</strong></h2>
-            </div>
-            <div class="modal-body">
-                <h2 id="match-name"></h2>
-                <img id="match-img" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
+<!-- Modal Dialog Displaying Closest Friend Match -->
+<div id="modal1" class="modal">
+		<div class="modal-content">
+			<h4>Closest Friend Match</h4>
+			<div class="divider"></div>
+			<h5 id="userMatch"></h5>
+			<img id="userMatchImage" class="materialboxed" width="650" src="">
+		</div>
+		<div class="modal-footer">
+			<a href="/survey" class="modal-action modal-close waves-effect waves-green btn-flat">Fill Again!</a>
+		</div>
 </div>
 <!--===== Scripting for the Survey Page Inputs =====-->
 <script type="text/javascript">
@@ -277,15 +273,16 @@
             };
 
             // AJAX post the data to the friends API
-            $.post("/api/friends", userData, function(data) {
-                // Grab the result from the AJAX post so that the best match's name and photo are displayed.
-                $("#match-name").text(data.name);
-                $("#match-img").attr("src", data.photo);
+            $.post('/api/friends', userData)
+            .done(function(data) 
+            {
+      			// Set the name and image values of friend match
+      			$('#userMatch').text(data.matchName);
+		    	$("#userMatchImage").attr("src", data.matchImage);
 
-                // Show the friend object with the best match
-                $("#results-modal").modal('toggle');
-
-            });
+		    	// Pop open the modal dialog
+      			$('#modal1').modal('toggle');
+      		});
         } 
         else 
         {
