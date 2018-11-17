@@ -1,8 +1,16 @@
 {
   "name": "friendfinder",
   "version": "1.0.0",
-  "description": "FriendFinder",
+  "description": "An Node.js and Express based friend matching application.",
   "main": "server.js",
+  "dependencies": {
+    "express": "^4.16.4",
+    "path": "^0.12.7"
+  },
+  "engines": {
+    "node": "10.6.0"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -11,14 +19,15 @@
     "type": "git",
     "url": "git+https://github.com/jterry149/FriendFinder.git"
   },
-  "author": "",
+  "keywords": [
+    "friend-finder",
+    "friend-match",
+    "compatibility"
+  ],
+  "author": "Jessica Terry",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/jterry149/FriendFinder/issues"
   },
-  "homepage": "https://github.com/jterry149/FriendFinder#readme",
-  "dependencies": {
-    "express": "^4.16.4",
-    "path": "^0.12.7"
-  }
+  "homepage": "https://github.com/jterry149/FriendFinder#readme"
 }

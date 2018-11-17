@@ -1,0 +1,6 @@
+{
+    "name": "friendfinder",
+    "description": "An Node.js and Express based friend matching application.",
+    "repository":"https://github.com/jterry149/FriendFinder.git",
+    "keywords": ["friend-finder","friend-match","compatibility"]
+}
