@@ -15,4 +15,10 @@ module.exports = function(app)
     {
 		res.sendFile(path.join(__dirname, '../public/survey.html'));
 	});
+
+	// Default back to the home page
+	app.get("*", function(req, res)
+	{
+		res.sendFile(path.join(__dirname, "../public/home.html"));
+	});
 };
